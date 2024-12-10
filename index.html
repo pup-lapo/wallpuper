@@ -9,42 +9,142 @@
 </head>
 
 <body>
+    <datalist id="presetColors">
+        <option value="#202020">Matte Black</option>
+        <option value="#2b4e2d">Hunter Green</option>
+        <option value="#30345a">Navy Blue</option>
+        <option value="#36261a">Brown</option>
+        <option value="#414c9d">Royal Blue</option>
+        <option value="#549ccb">Sky Blue</option>
+        <option value="#564291">Purple</option>
+        <option value="#676767">Gray</option>
+        <option value="#b5f800">Lime Green</option>
+        <option value="#b93e00">Orange</option>
+        <option value="#c11d57">Pink</option>
+        <option value="#c51a13">Red</option>
+        <option value="#e6e6e6">White</option>
+        <option value="#f9e300">Yellow</option>
+    </datalist>
     <div class="container">
         <div class="preview">
-            <!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-            <svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1224 2700"
-                style="enable-background:new 0 0 1224 2700;" xml:space="preserve">
-                <style type="text/css">
-                    .st0 {
-                        fill: #202020;
-                    }
-
-                    .st1 {
-                        fill: #E6E6E6;
-                    }
-
-                    .st2 {
-                        fill: #ED1E79;
-                    }
-
-                    .st3 {
-                        fill: #333333
-                    }
-                </style>
-                <rect x="0" y="0" class="st0" width="1224" height="2700" />
-                <rect id="mouth-rect" x="0" y="1601.5" class="st1" width="1224" height="1100" />
-                <rect x="453.5" y="1665" class="st2" width="315" height="1068.5" />
-                <path class="st3" d="M663.7,1925.8l170.2-176.8c43.9-45.6,11.6-121.6-51.7-121.6H441.8c-63.3,0-95.6,76-51.7,121.6l170.2,176.8
-	C588.5,1955.1,635.5,1955.1,663.7,1925.8z" />
-            </svg>
+            <object class="svg-class" type="image/svg+xml" data="base.svg" width="100%" height="100%"></object>
         </div>
         <div class="controls-div">
-            <label for="vol">Mouth height:</label>
-            <input type="range" id="mouth" name="mouth" min="0" max="1024">
+            <div class="screen-sizes-div">
+                <label for="screen-sizes">Select Screen Size:</label>
+                <select id="screen-sizes">
+                    <option value="custom">Custom</option>
+                    <optgroup label="iPhone">
+                        <option value="1290x2796">1290 x 2796 (iPhone 14 Pro Max)</option>
+                        <option value="1284x2778">1284 x 2778 (iPhone 12 Pro Max, 13 Pro Max, 14 Plus)</option>
+                        <option value="1242x2688">1242 x 2688 (iPhone XS Max, 11 Pro Max)</option>
+                        <option value="1170x2532">1170 x 2532 (iPhone 12, 12 Pro, 13, 13 Pro, 14)</option>
+                        <option value="1125x2436">1125 x 2436 (iPhone 12 mini, iPhone X, XS, 11 Pro)</option>
+                        <option value="1080x2340">1080 x 2340 (iPhone 13 mini)</option>
+                        <option value="1080x1920">1080 x 1920 (iPhone 6 Plus, 6s Plus, 7 Plus, 8 Plus)</option>
+                        <option value="828x1792">828 x 1792 (iPhone XR, 11)</option>
+                        <option value="750x1334">750 x 1334 (iPhone 6, 6s, 7, 8, SE 2020)</option>
+                    </optgroup>
+                    <optgroup label="iPad">
+                        <option value="2752x2064">2752 x 2064 (iPad Pro 13‑inch M4 (7th gen))</option>
+                        <option value="2732x2048">2732 x 2048 (iPad Pro 12.9-inch (6th gen), iPad Air 13-inch M2 (6th
+                            gen))</option>
+                        <option value="2420x1668">2420 x 1668 (iPad Pro 11‑inch M4 (7th gen))</option>
+                        <option value="2360x1640">2360 x 1640 (iPad Air 11-inch M2 (6th gen), iPad Air (5th gen), iPad
+                            (10th gen))</option>
+                        <option value="2266x1488">2266 x 1488 (iPad mini (6th gen))</option>
+                        <option value="2224x1668">2224 x 1668 (iPad Pro 10.5-inch (2nd gen))</option>
+                    </optgroup>
+                    <optgroup label="Android Phone">
+                        <option value="1440x3088">1440 x 3088 (Samsung Galaxy S23 Ultra)</option>
+                        <option value="1080x2340">1080 x 2340 (Samsung Galaxy S23)</option>
+                        <option value="1344x2992">1344 x 2992 (Google Pixel 8 Pro)</option>
+                        <option value="1080x2400">1080 x 2400 (Google Pixel 7)</option>
+                        <option value="1440x3216">1440 x 3216 (OnePlus 11)</option>
+                        <option value="1440x3200">1440 x 3200 (Xiaomi 13 Pro)</option>
+                        <option value="1440x3168">1440 x 3168 (Oppo Find X6 Pro)</option>
+                        <option value="1260x2800">1260 x 2800 (Vivo X90 Pro)</option>
+                        <option value="1644x3840">1644 x 3840 (Sony Xperia 1 V)</option>
+                        <option value="1080x2400">1080 x 2400 (Motorola Edge+ (2023))</option>
+                        <option value="1080x2400" selected>1224 x 2700 (Fairphone 5)</option>
+                    </optgroup>
+                    <optgroup label="Android Tablet">
+                        <option value="1848x2960">1848 x 2960 (Samsung Galaxy Tab S9 Ultra)</option>
+                        <option value="1752x2800">1752 x 2800 (Samsung Galaxy Tab S9+)</option>
+                        <option value="1600x2560">1600 x 2560 (Samsung Galaxy Tab S9, Lenovo Tab P12 Pro)</option>
+                        <option value="1350x2160">1350 x 2160 (Lenovo Yoga Tab 13)</option>
+                        <option value="1920x1200">1920 x 1200 (Amazon Fire HD 10 (2021), Asus ROG Flow Z13)</option>
+                        <option value="1280x800">1280 x 800 (Amazon Fire HD 8 (2022))</option>
+                        <option value="1800x2880">1800 x 2880 (Xiaomi Pad 6)</option>
+                        <option value="2560x1600">2560 x 1600 (Huawei MatePad Pro 12.6 (2022))</option>
+                    </optgroup>
+                </select>
+
+                <div class="custom-sizes">
+                    <label for="screen-width">Width:</label>
+                    <input type="number" id="screen-width" name="screen-width" min="0">
+                    <label for="screen-height">Height:</label>
+                    <input type="number" id="screen-height" name="screen-height" min="0">
+                </div>
+
+                <div class="base-controls">
+                    <label for="base-color">Base color:</label>
+                    <input type="color" id="base-color" name="base-color" list="presetColors" value="#202020">
+                </div>
+
+                <div class="muzzle-controls">
+                    <label for="muzzle-color">Muzzle color:</label>
+                    <input type="color" id="muzzle-color" name="muzzle-color" list="presetColors" value="#e6e6e6">
+
+                    <label for="muzzle-height">Adjust Muzzle height:</label>
+                    <input type="range" id="muzzle-height" name="muzzle-height" min="0" max="1" step="0.01" value="0.4074">
+                </div>
+
+                <div class="nose-controls">
+                    <label for="nose-color">Nose color:</label>
+                    <input type="color" id="nose-color" name="nose-color" list="presetColors" value="#333333">
+
+                    <label for="nose-height">Adjust Nose Height:</label>
+                    <input type="range" id="nose-height" min="0" max="1" value="0">
+
+                    <label for="nose-size">Adjust Nose Size:</label>
+                    <input type="range" id="nose-size" min="0.75" max="1.25" step="0.05" value="1">
+                </div>
+
+                <div class="lip-controls">
+                    <label for="lip-color">Lip color:</label>
+                    <input type="color" id="lip-color" name="lip-color" list="presetColors" value="#c11d57">
+
+                    <label for="lip-width">Adjust Lip Width:</label>
+                    <input type="range" id="lip-width" min="0" max="1" step="0.05" value="0.25">
+                </div>
+
+                <div class="bridge">
+                    <label for="bridge-color">Bridge color:</label>
+                    <input type="color" id="bridge-color" name="bridge-color" list="presetColors">
+
+                    <label for="bridge-width">Adjust Bridge Width:</label>
+                    <input type="range" id="bridge-width" min="0" max="1" step="0.05" value="1">
+                </div>
+
+                <div class="details">
+                    <label for="details-color">Details color:</label>
+                    <input type="color" id="details-color" name="details-color" list="presetColors">
+
+                    <label for="details-choice">Select Details:</label>
+                    <select id="details-choice"> <!-- eyelets, whiskers, fur, seven-holes, none -->
+                        <option value="eyelets">Eyelets</option>
+                        <option value="whiskers">Whiskers</option>
+                        <option value="fur">Fur</option>
+                        <option value="seven-holes">Seven Holes</option>
+                        <option value="none" selected>None</option>
+                    </select>
+                </div>
+            </div>
         </div>
-    </div>
 
 </body>
 <script src="script.js"></script>
+</script>
+
 </html>

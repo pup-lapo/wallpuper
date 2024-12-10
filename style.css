@@ -1,16 +1,17 @@
 .preview{
-    background-color: green;
-    max-height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Optional, for centering */
-    overflow: hidden; /* Optional, to prevent overflow if needed */
+    background-color: white;
+    width: 75vw; /* Set the desired width for the div */
+    height: 75vh; /* Set the desired height for the div */
+    overflow: hidden; /* Ensure no content overflows the div */
+    display: flex; /* Center image if needed */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
 }
 
-.preview>svg{
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ensures the SVG scales and maintains proportions */
+.preview img{
+    max-width: 100%; /* Ensure the image doesn't exceed the div's width */
+    max-height: 100%; /* Ensure the image doesn't exceed the div's height */
+    object-fit: contain; /* Ensures the entire image fits within the box */
 }
 
 .container{

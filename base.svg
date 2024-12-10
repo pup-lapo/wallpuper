@@ -1,0 +1,8 @@
+<svg version="1.1" id="view" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+    y="0px" viewBox="0 0 1224 2700" style="enable-background:new 0 0 1224 2700;" xml:space="preserve">
+    
+    <rect id="base" x="0" y="0" class="matte-black" width="1224" height="2700" />
+    <rect id="muzzle" x="0" y="1600" class="white" width="1224" height="1100" />
+    <rect id="lip" x="453.5" y="1665" class="pink" width="315" height="1068.5" />
+    <path id="nose" class="smooth-black" d="M612,1350l170.2,-176.8c43.9,-45.6,11.6,-121.6,-51.7,-121.6h-340.4c-63.3,0,-95.6,76,-51.7,121.6l170.2,176.8c28.2,29.3,75.2,29.3,103.4,0z" />
+</svg>
