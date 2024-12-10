@@ -1,0 +1,22 @@
+.preview{
+    background-color: green;
+    max-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Optional, for centering */
+    overflow: hidden; /* Optional, to prevent overflow if needed */
+}
+
+.preview>svg{
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the SVG scales and maintains proportions */
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
