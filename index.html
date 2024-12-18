@@ -97,7 +97,7 @@
                     <input type="color" id="muzzle-color" name="muzzle-color" list="presetColors" value="#e6e6e6">
 
                     <label for="muzzle-height">Adjust Muzzle height:</label>
-                    <input type="range" id="muzzle-height" name="muzzle-height" min="0" max="1" step="0.01" value="0.4074">
+                    <input type="range" id="muzzle-height" name="muzzle-height" min="0" max="0.75" step="0.01" value="0.4074">
                 </div>
 
                 <div class="nose-controls">
@@ -105,7 +105,7 @@
                     <input type="color" id="nose-color" name="nose-color" list="presetColors" value="#333333">
 
                     <label for="nose-height">Adjust Nose Height:</label>
-                    <input type="range" id="nose-height" min="0" max="1" value="0">
+                    <input type="range" id="nose-height" min="0" max="1" step="0.05" value="0.6">
 
                     <label for="nose-size">Adjust Nose Size:</label>
                     <input type="range" id="nose-size" min="0.75" max="1.25" step="0.05" value="1">
@@ -115,16 +115,14 @@
                     <label for="lip-color">Lip color:</label>
                     <input type="color" id="lip-color" name="lip-color" list="presetColors" value="#c11d57">
 
-                    <label for="lip-width">Adjust Lip Width:</label>
-                    <input type="range" id="lip-width" min="0" max="1" step="0.05" value="0.25">
                 </div>
 
                 <div class="bridge">
                     <label for="bridge-color">Bridge color:</label>
-                    <input type="color" id="bridge-color" name="bridge-color" list="presetColors">
+                    <input type="color" id="bridge-color" name="bridge-color" list="presetColors" value="#414c9d">
 
-                    <label for="bridge-width">Adjust Bridge Width:</label>
-                    <input type="range" id="bridge-width" min="0" max="1" step="0.05" value="1">
+                    <label for="bridge-lip-width">Adjust Bridge and Lip Width:</label>
+                    <input type="range" id="bridge-lip-width" min="0" max="1" step="0.05" value="0.25">
                 </div>
 
                 <div class="details">
@@ -133,11 +131,11 @@
 
                     <label for="details-choice">Select Details:</label>
                     <select id="details-choice"> <!-- eyelets, whiskers, fur, seven-holes, none -->
-                        <option value="eyelets">Eyelets</option>
-                        <option value="whiskers">Whiskers</option>
+                        <option value="eyelets" >Eyelets</option>
+                        <option value="whiskers" selected>Whiskers</option>
                         <option value="fur">Fur</option>
                         <option value="seven-holes">Seven Holes</option>
-                        <option value="none" selected>None</option>
+                        <option value="none" >None</option>
                     </select>
                 </div>
             </div>

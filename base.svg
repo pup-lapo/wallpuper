@@ -1,8 +1,66 @@
 <svg version="1.1" id="view" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-    y="0px" viewBox="0 0 1224 2700" style="enable-background:new 0 0 1224 2700;" xml:space="preserve">
-    
-    <rect id="base" x="0" y="0" class="matte-black" width="1224" height="2700" />
-    <rect id="muzzle" x="0" y="1600" class="white" width="1224" height="1100" />
-    <rect id="lip" x="453.5" y="1665" class="pink" width="315" height="1068.5" />
-    <path id="nose" class="smooth-black" d="M612,1350l170.2,-176.8c43.9,-45.6,11.6,-121.6,-51.7,-121.6h-340.4c-63.3,0,-95.6,76,-51.7,121.6l170.2,176.8c28.2,29.3,75.2,29.3,103.4,0z" />
+    y="0px" viewBox="0 0 1224 2700" style="enable-background:new 0 0 1224 2700;" xml:space="preserve" overflow="auto">
+    <style type="text/css">
+        .holes {
+            fill: #202020;
+        }
+
+        .details {
+            fill: #20A843;
+        }
+    </style>
+
+    <rect id="base" x="0" y="0" width="1224" height="2700" />
+    <rect id="muzzle" x="0" y="1600" width="1224" height="1100" />
+
+    <path id="fur" class="details" d="M156.9,485.4
+	c195.2,195.2,882.3-180.2,882.3-180.2S409.3,270.7,409.3-2c279.5,0,473.8-243.7,473.8-243.7S157-330.9,157-542.6h-0.1l-314.8,0
+	c0,0-0.1,0-0.1,0c0,211.7-726.1,296.9-726.1,296.9S-689.8-2-410.3-2c0,272.7-629.9,307.2-629.9,307.2s687.1,375.4,882.3,180.2
+	L-7.6,318.7L156.9,485.4z" />
+    <g id="eyelets">
+        <g id="eyeletsL">
+            <circle class="holes" cx="-509" cy="17.7" r="37.5" />
+            <circle class="holes" cx="-267" cy="-44.6" r="37.5" />
+            <circle class="holes" cx="-321.5" cy="188" r="37.5" />
+        </g>
+        <g id="eyeletsR">
+            <circle class="holes" cx="510" cy="17.7" r="37.5" />
+            <circle class="holes" cx="268" cy="-44.6" r="37.5" />
+            <circle class="holes" cx="322.5" cy="188" r="37.5" />
+        </g>
+    </g>
+    <g id="whiskers">
+        <g id="whiskers_L">
+            <path class="details" d="M-242,35.3l12.5-112.2l-663-38.4C-892.5-115.3-680.3-13.5-242,35.3z" />
+            <path class="details" d="M-936.8,75c0,0,212.3,101.7,650.5,150.6l12.5-112.2" />
+        </g>
+        <g id="whiskers_R">
+            <path class="details" d="M243,35.3L230.5-76.9l663-38.4C893.5-115.3,681.3-13.5,243,35.3z" />
+            <path class="details" d="M937.8,75c0,0-212.3,101.7-650.5,150.6l-12.5-112.2" />
+        </g>
+    </g>
+    <g id="seven-holes">
+        <g id="seven-holesL">
+            <circle class="holes" cx="-263.3" cy="-17.9" r="12.5" />
+            <circle class="holes" cx="-396.8" cy="-91.7" r="12.5" />
+            <circle class="holes" cx="-305.9" cy="177.3" r="12.5" />
+            <circle class="holes" cx="-457.3" cy="141.8" r="12.5" />
+            <circle class="holes" cx="-592.9" cy="21" r="12.5" />
+            <circle class="holes" cx="-570.4" cy="-116.7" r="12.5" />
+            <circle class="holes" cx="-605.4" cy="158.7" r="12.5" />
+        </g>
+        <g id="seven-holesR">
+            <circle class="holes" cx="264.3" cy="-17.9" r="12.5" />
+            <circle class="holes" cx="397.8" cy="-91.7" r="12.5" />
+            <circle class="holes" cx="306.9" cy="177.3" r="12.5" />
+            <circle class="holes" cx="458.3" cy="141.8" r="12.5" />
+            <circle class="holes" cx="593.9" cy="21" r="12.5" />
+            <circle class="holes" cx="571.4" cy="-116.7" r="12.5" />
+            <circle class="holes" cx="606.4" cy="158.7" r="12.5" />
+        </g>
+    </g>
+    <rect id="lip" x="453.5" y="1665" width="315" height="1068.5" />
+    <rect id="bridge" x="453.5" y="1601.5" width="315" height="186.1" />
+    <path id="nose"
+        d="M50,0l170.2,-176.8c43.9,-45.6,11.6,-121.6,-51.7,-121.6h-340.4c-63.3,0,-95.6,76,-51.7,121.6l170.2,176.8c28.2,29.3,75.2,29.3,103.4,0z" />
 </svg>
