@@ -63,9 +63,8 @@ function updateSvg(){
     bridge.setAttribute('x', (screenWidth*(1-bridgeLipWidth))/2);
     bridge.setAttribute('fill', bridgeColor);
 
-    const style = svgDoc.querySelector('style');
-    style.textContent.replace(/\.details{fill:[^;]+;/, `.details{fill:${detailsColor};`);
-    console.log(style.textContent);
+    const detailsColorCSS = svgDoc.getElementById('detailsColors');
+    detailsColorCSS.innerHTML = `.holes { fill: #202020;} .details { fill: ${detailsColor};}`;
 
     var details = svgDoc.getElementById('eyelets');
     svgDoc.getElementById('eyelets').style.display = 'none';
@@ -81,13 +80,15 @@ function updateSvg(){
         details = svgDoc.getElementById('fur');
     } else if(detailsChoice === 'seven-holes'){
         details = svgDoc.getElementById('seven-holes');
+    } else if(detailsChoice === 'none'){
+        details = null;
     }
-    details.style.display = 'block';
-
-    details.setAttribute('transform-origin', '50% 50%');
-    details.setAttribute('transform', `translate(${screenWidth*0.5}, ${noseY + (lipHeight-250)*0.5} )`);
-    details.setAttribute('fill', bridgeColor);
-
+    if (details){
+        details.style.display = 'block';
+        details.setAttribute('transform-origin', '50% 50%');
+        details.setAttribute('transform', `translate(${screenWidth*0.5}, ${noseY + (lipHeight-250)*0.5} )`);
+        details.setAttribute('fill', bridgeColor);
+    }
     // update viewBox
     const viewbox_value = `0 0 ${screenWidth} ${screenHeight}`;
     svgDoc.getElementById('view').setAttribute('viewBox', viewbox_value);
@@ -98,12 +99,36 @@ svgObject.addEventListener('load', function() {
 });
 
 document.getElementById('screen-sizes').addEventListener('change', function (event) {
-    const [width, height] = event.target.value.split('x').map(Number);
+    const value = event.target.value;
+    var width;
+    var height;
+    if(value === 'custom'){
+        document.getElementById('custom-sizes').classList.remove('hidden');
+        width = document.getElementById('custom-width').value;
+        height = document.getElementById('custom-height').value;
+    } else {
+        document.getElementById('custom-sizes').classList.add('hidden');
+        [width, height] = value.split('x').map(Number);
+        document.getElementById('custom-width').value = width;
+        document.getElementById('custom-height').value = height;
+    }
     screenWidth = width;
     screenHeight = height;
     updateSvg();
-
 });
+
+document.getElementById('custom-width').addEventListener('input', updateCustomSizes);
+document.getElementById('custom-height').addEventListener('input', updateCustomSizes);
+
+function updateCustomSizes(){
+    if(document.getElementById('screen-sizes').value !== 'custom')
+        return;
+    const width = document.getElementById('custom-width').value;
+    const height = document.getElementById('custom-height').value;
+    screenWidth = width;
+    screenHeight = height;
+    updateSvg();
+}
 
 document.getElementById('base-color').addEventListener('change', function (event) {
     baseColor = event.target.value;
@@ -160,4 +185,39 @@ document.getElementById('details-choice').addEventListener('change', function (e
     updateSvg();
 });
 
+function exportSVG(){
+    const svgDoc = svgObject.contentDocument;
+    var svgData = new XMLSerializer().serializeToString(svgDoc);
+    var svgBlob = new Blob([svgData], {type: "image/svg+xml;charset=utf-8"});
+    var svgUrl = URL.createObjectURL(svgBlob);
+    var downloadLink = document.createElement("a");
+    downloadLink.href = svgUrl;
+    downloadLink.download = "cat.svg";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
 
+function exportPNG(){
+    const svgDoc = svgObject.contentDocument;
+    var svgData = new XMLSerializer().serializeToString(svgDoc);
+    var canvas = document.createElement("canvas");
+    var ctx = canvas.getContext("2d");
+    var img = document.createElement("img");
+    var svgSize = svgDoc.getElementById('view').getAttribute('viewBox').split(' ').slice(2);
+    canvas.width = svgSize[0];
+    canvas.height = svgSize[1];
+    var svg = new Blob([svgData], {type: "image/svg+xml;charset=utf-8"});
+    var url = URL.createObjectURL(svg);
+    img.onload = function() {
+        ctx.drawImage(img, 0, 0);
+        var png = canvas.toDataURL("image/png");
+        var downloadLink = document.createElement("a");
+        downloadLink.href = png;
+        downloadLink.download = "cat.png";
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
+    };
+    img.src = url;
+}

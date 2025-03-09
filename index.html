@@ -11,19 +11,20 @@
 <body>
     <datalist id="presetColors">
         <option value="#202020">Matte Black</option>
-        <option value="#2b4e2d">Hunter Green</option>
-        <option value="#30345a">Navy Blue</option>
-        <option value="#36261a">Brown</option>
-        <option value="#414c9d">Royal Blue</option>
-        <option value="#549ccb">Sky Blue</option>
-        <option value="#564291">Purple</option>
-        <option value="#676767">Gray</option>
-        <option value="#b5f800">Lime Green</option>
-        <option value="#b93e00">Orange</option>
-        <option value="#c11d57">Pink</option>
-        <option value="#c51a13">Red</option>
-        <option value="#e6e6e6">White</option>
-        <option value="#f9e300">Yellow</option>
+        <option value="#2c7547">Hunter Green</option>
+        <option value="#192247">Navy Blue</option>
+        <option value="#50300e">Brown</option>
+        <option value="#564cbf">Royal Blue</option>
+        <option value="#4972b5">Cobalt</option>
+        <option value="#71d0e4">Aqua Blue</option>
+        <option value="#530281">Purple</option>
+        <option value="#5b5650">Gray</option>
+        <option value="#99f100">Lime Green</option>
+        <option value="#e57d0e">Orange</option>
+        <option value="#ee206d">Pink</option>
+        <option value="#9d0514">Red</option>
+        <option value="#efefef">White</option>
+        <option value="#f1e500">Yellow</option>
     </datalist>
     <div class="container">
         <div class="preview">
@@ -35,10 +36,12 @@
                 <select id="screen-sizes">
                     <option value="custom">Custom</option>
                     <optgroup label="iPhone">
-                        <option value="1290x2796">1290 x 2796 (iPhone 14 Pro Max)</option>
-                        <option value="1284x2778">1284 x 2778 (iPhone 12 Pro Max, 13 Pro Max, 14 Plus)</option>
+                        <option value="1320x2868">1320 x 2868 (iPhone 16 Pro Max)</option>
+                        <option value="1290x2796">1290 x 2796 (iPhone 16, 16 Plus, 16 Pro, 15 Plus, 15 Pro Max, 14 Pro Max )</option>
+                        <option value="1179x2556">1179 x 2556 (iPhone 15, 15 Pro)</option>
+                        <option value="1284x2778">1284 x 2778 (iPhone 14 Plus, 13 Pro Max, 12 Pro Max)</option>
                         <option value="1242x2688">1242 x 2688 (iPhone XS Max, 11 Pro Max)</option>
-                        <option value="1170x2532">1170 x 2532 (iPhone 12, 12 Pro, 13, 13 Pro, 14)</option>
+                        <option value="1170x2532">1170 x 2532 (iPhone 14, 13, 13 Pro, 12, 12 Pro)</option>
                         <option value="1125x2436">1125 x 2436 (iPhone 12 mini, iPhone X, XS, 11 Pro)</option>
                         <option value="1080x2340">1080 x 2340 (iPhone 13 mini)</option>
                         <option value="1080x1920">1080 x 1920 (iPhone 6 Plus, 6s Plus, 7 Plus, 8 Plus)</option>
@@ -66,7 +69,7 @@
                         <option value="1260x2800">1260 x 2800 (Vivo X90 Pro)</option>
                         <option value="1644x3840">1644 x 3840 (Sony Xperia 1 V)</option>
                         <option value="1080x2400">1080 x 2400 (Motorola Edge+ (2023))</option>
-                        <option value="1080x2400" selected>1224 x 2700 (Fairphone 5)</option>
+                        <option value="1224x2700" selected>1224 x 2700 (Fairphone 5)</option>
                     </optgroup>
                     <optgroup label="Android Tablet">
                         <option value="1848x2960">1848 x 2960 (Samsung Galaxy Tab S9 Ultra)</option>
@@ -80,67 +83,82 @@
                     </optgroup>
                 </select>
 
-                <div class="custom-sizes">
-                    <label for="screen-width">Width:</label>
-                    <input type="number" id="screen-width" name="screen-width" min="0">
-                    <label for="screen-height">Height:</label>
-                    <input type="number" id="screen-height" name="screen-height" min="0">
+                <div id="custom-sizes" class="custom-sizes hidden" >
+                    <label for="custom-width">Width:</label>
+                    <input type="number" id="custom-width" name="custom-width" min="0" value="1224">
+                    <label for="custom-height">Height:</label>
+                    <input type="number" id="custom-height" name="custom-height" min="0" value="2700">
                 </div>
 
                 <div class="base-controls">
-                    <label for="base-color">Base color:</label>
-                    <input type="color" id="base-color" name="base-color" list="presetColors" value="#202020">
+                    <label for="base-color">Base color:
+                        <input type="color" id="base-color" name="base-color" list="presetColors" value="#202020">
+                    </label>
                 </div>
 
                 <div class="muzzle-controls">
-                    <label for="muzzle-color">Muzzle color:</label>
-                    <input type="color" id="muzzle-color" name="muzzle-color" list="presetColors" value="#e6e6e6">
+                    <label for="muzzle-color">Muzzle color:
+                        <input type="color" id="muzzle-color" name="muzzle-color" list="presetColors" value="#efefef">
+                    </label>
 
-                    <label for="muzzle-height">Adjust Muzzle height:</label>
-                    <input type="range" id="muzzle-height" name="muzzle-height" min="0" max="0.75" step="0.01" value="0.4074">
+                    <label for="muzzle-height">Muzzle height:
+                        <input type="range" id="muzzle-height" name="muzzle-height" min="0" max="0.75" step="0.01"
+                        value="0.4074">
+                    </label>
                 </div>
 
                 <div class="nose-controls">
-                    <label for="nose-color">Nose color:</label>
-                    <input type="color" id="nose-color" name="nose-color" list="presetColors" value="#333333">
+                    <label for="nose-color">Nose color:
+                        <input type="color" id="nose-color" name="nose-color" list="presetColors" value="#202020">
+                    </label>
 
-                    <label for="nose-height">Adjust Nose Height:</label>
-                    <input type="range" id="nose-height" min="0" max="1" step="0.05" value="0.6">
+                    <label for="nose-height">Nose Height:
+                        <input type="range" id="nose-height" min="0" max="1" step="0.05" value="0.6">
+                    </label>
 
-                    <label for="nose-size">Adjust Nose Size:</label>
-                    <input type="range" id="nose-size" min="0.75" max="1.25" step="0.05" value="1">
+                    <label for="nose-size">Nose Size:
+                        <input type="range" id="nose-size" min="0.75" max="1.25" step="0.05" value="1">
+                    </label>
                 </div>
 
                 <div class="lip-controls">
-                    <label for="lip-color">Lip color:</label>
-                    <input type="color" id="lip-color" name="lip-color" list="presetColors" value="#c11d57">
+                    <label for="lip-color">Lip color:
+                        <input type="color" id="lip-color" name="lip-color" list="presetColors" value="#71d0e4">
+                    </label>
 
                 </div>
 
                 <div class="bridge">
-                    <label for="bridge-color">Bridge color:</label>
-                    <input type="color" id="bridge-color" name="bridge-color" list="presetColors" value="#414c9d">
+                    <label for="bridge-color">Bridge color:
+                        <input type="color" id="bridge-color" name="bridge-color" list="presetColors" value="#4972b5">
+                    </label>
 
-                    <label for="bridge-lip-width">Adjust Bridge and Lip Width:</label>
-                    <input type="range" id="bridge-lip-width" min="0" max="1" step="0.05" value="0.25">
+                    <label for="bridge-lip-width">Bridge and Lip Width:
+                        <input type="range" id="bridge-lip-width" min="0" max="1" step="0.05" value="0.25">
+                    </label>
                 </div>
 
                 <div class="details">
-                    <label for="details-color">Details color:</label>
-                    <input type="color" id="details-color" name="details-color" list="presetColors">
+                    <label for="details-color">Details color:
+                        <input type="color" id="details-color" name="details-color" list="presetColors" value="#530281">
+                    </label>
 
-                    <label for="details-choice">Select Details:</label>
-                    <select id="details-choice"> <!-- eyelets, whiskers, fur, seven-holes, none -->
-                        <option value="eyelets" >Eyelets</option>
-                        <option value="whiskers" selected>Whiskers</option>
-                        <option value="fur">Fur</option>
-                        <option value="seven-holes">Seven Holes</option>
-                        <option value="none" >None</option>
-                    </select>
-                </div>
+                    <label for="details-choice">Select Details:
+                        <select id="details-choice"> <!-- eyelets, whiskers, fur, seven-holes, none -->
+                            <option value="eyelets">Eyelets</option>
+                            <option value="whiskers" selected>Whiskers</option>
+                            <option value="fur">Fur</option>
+                            <option value="seven-holes">Seven Holes</option>
+                            <option value="none">None</option>
+                        </select>
+                    </label>
+                    </div>
+            </div>
+            <div class="buttons-div">
+                <button type="button" onclick="exportSVG()">Export SVG</button>
+                <button type="button" onclick="exportPNG()">Export PNG</button>
             </div>
         </div>
-
 </body>
 <script src="script.js"></script>
 </script>

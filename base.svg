@@ -1,6 +1,6 @@
 <svg version="1.1" id="view" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
     y="0px" viewBox="0 0 1224 2700" style="enable-background:new 0 0 1224 2700;" xml:space="preserve" overflow="auto">
-    <style type="text/css">
+    <style id="detailsColors" type="text/css">
         .holes {
             fill: #202020;
         }
